@@ -1,0 +1,13 @@
+{
+  "itemGroup.atech": "Example Mod Tab",
+  "block.atech.example_block": "Example Block",
+  "item.atech.example_item": "Example Item",
+
+  "atech.configuration.title": "ATech Configs",
+  "atech.configuration.section.atech.common.toml": "ATech Configs",
+  "atech.configuration.section.atech.common.toml.title": "ATech Configs",
+  "atech.configuration.items": "Item List",
+  "atech.configuration.logDirtBlock": "Log Dirt Block",
+  "atech.configuration.magicNumberIntroduction": "Magic Number Text",
+  "atech.configuration.magicNumber": "Magic Number"
+}
