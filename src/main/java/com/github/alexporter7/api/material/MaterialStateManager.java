@@ -11,7 +11,6 @@ public class MaterialStateManager {
     private final int gasThreshold;
     
     private MaterialState state;
-    private int temperature;
 
     public MaterialStateManager(int solidThreshold, int liquidThreshold, int gasThreshold) {
         this(solidThreshold, liquidThreshold, gasThreshold, MaterialState.SOLID);
@@ -24,7 +23,7 @@ public class MaterialStateManager {
         this.state = state;
     }
     
-    public void updateState() {
+    public void updateState(int temperature) {
         if(temperature > gasThreshold)
             updateState(MaterialState.PLASMA);
         else if(temperature > liquidThreshold)
