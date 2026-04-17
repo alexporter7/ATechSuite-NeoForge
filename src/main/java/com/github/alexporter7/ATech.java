@@ -1,5 +1,6 @@
 package com.github.alexporter7;
 
+import com.github.alexporter7.init.ATMaterialInit;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -72,7 +73,8 @@ public class ATech {
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
+        //ITEMS.register(modEventBus);
+        ATMaterialInit.registerItems(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
 

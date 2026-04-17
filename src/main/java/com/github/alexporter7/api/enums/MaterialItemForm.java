@@ -4,5 +4,7 @@ public enum MaterialItemForm {
     INGOT,
     ROD,
     RING,
-    PLATE
+    PLATE,
+    BLOCK,
+    DUST
 }

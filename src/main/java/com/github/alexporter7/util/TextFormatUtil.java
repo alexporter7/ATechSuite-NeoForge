@@ -39,4 +39,8 @@ public class TextFormatUtil {
     public static final String ITALIC = "§o";
     public static final String RESET = "§r";
     public static final String RESET_ADD_COLO = "§r§f";
+    
+    public static String colorText(String color, String text) {
+        return String.format("%s%s", color, text);
+    }
 }
