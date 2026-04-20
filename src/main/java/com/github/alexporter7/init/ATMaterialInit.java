@@ -6,6 +6,7 @@ import com.github.alexporter7.api.material.ATMaterial;
 import com.github.alexporter7.api.material.MaterialItem;
 import com.github.alexporter7.api.material.MaterialStateManager;
 import com.github.alexporter7.util.ATItemUtils;
+import com.github.alexporter7.util.TemperatureArray;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -33,15 +34,14 @@ public class ATMaterialInit {
     }
     
     public static void registerMaterials() {
-        registerMaterial("test_material", "te", 10, 20, 30, 0);
-        registerMaterial("iron", "fe", 10, 20, 30, 0);
+        registerMaterial("iron", "Fe", 10, 20, 30, 0);
     }
     
     public static void registerMaterial(String materialName, String chemicalSymbol, int solidThreshold, 
                                         int liquidThreshold, int gasThreshold, int tintIndex) {
         MATERIALS.put(materialName, new ATMaterial(materialName, 
-                chemicalSymbol, 
-                new MaterialStateManager(solidThreshold, liquidThreshold, gasThreshold),
+                chemicalSymbol,
+                new TemperatureArray(30, 50, 70),
                 tintIndex));
     }
     
@@ -53,7 +53,7 @@ public class ATMaterialInit {
             for(MaterialItemForm form : allItemForms) {
                 String itemName = ATItemUtils.getItemNameWithForm(materialName, form);
                 ITEMS.register(itemName, 
-                        () -> new MaterialItem(MATERIALS.get(itemName), ATItemUtils.getItemId(itemName)));
+                        () -> new MaterialItem(MATERIALS.get(materialName), ATItemUtils.getItemId(itemName)));
             }   
         }
             
